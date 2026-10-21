@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form - College of Shariah and Islamic Sciences</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+
+
+
+
+
+    /* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef1f3;
+    color: #222;
+    line-height: 1.5;
+}
+
+.page {
+    width: 900px;
+    max-width: 95%;
+    margin: 30px auto;
+    background: white;
+    padding: 35px 45px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    text-align: center;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    width: 180px;
+    height: auto;
+    max-height: 190px;
+    object-fit: contain;
+}
+
+.college-title {
+    margin-top: 8px;
+}
+
+.college-title h1 {
+    color: #174d35;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.college-title h2 {
+    color: #333;
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+.college-title p {
+    color: #777;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.form-line {
+    height: 3px;
+    background: #174d35;
+    margin: 20px 0 25px;
+}
+
+
+/* =========================================
+   FORM SECTIONS
+========================================= */
+
+.form-section {
+    margin-bottom: 25px;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-section h3 {
+    background: #174d35;
+    color: white;
+    padding: 11px 15px;
+    font-size: 17px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px;
+    padding: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #174d35;
+    box-shadow: 0 0 0 2px rgba(23, 77, 53, 0.12);
+}
+
+
+/* =========================================
+   RADIO BUTTONS
+========================================= */
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 5px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.radio-group input {
+    accent-color: #174d35;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    background: #f0f3f1;
+    color: #174d35;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+td {
+    border: 1px solid #ccc;
+    padding: 6px;
+}
+
+td input {
+    border: none !important;
+    width: 100%;
+    padding: 8px;
+}
+
+td input:focus {
+    box-shadow: none !important;
+}
+
+
+/* =========================================
+   CHECKBOXES
+========================================= */
+
+.checkbox-list {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.checkbox-list label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.checkbox-list input,
+.declaration-check input {
+    accent-color: #174d35;
+}
+
+
+/* =========================================
+   DECLARATION
+========================================= */
+
+.declaration {
+    padding: 20px;
+}
+
+.declaration-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SIGNATURES
+========================================= */
+
+.signature-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 45px 10px 30px;
+}
+
+.signature-box {
+    text-align: center;
+}
+
+.signature-line {
+    height: 1px;
+    background: #333;
+    margin-bottom: 8px;
+}
+
+.signature-box p {
+    font-size: 13px;
+    color: #444;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+button {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit-btn {
+    background: #174d35;
+}
+
+.submit-btn:hover {
+    background: #0e3825;
+}
+
+.reset-btn {
+    background: #777;
+}
+
+.reset-btn:hover {
+    background: #555;
+}
+
+.print-btn {
+    background: #1b628a;
+}
+
+.print-btn:hover {
+    background: #124966;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px 15px;
+        box-shadow: none;
+    }
+
+    .college-title h1 {
+        font-size: 21px;
+    }
+
+    .college-title h2 {
+        font-size: 18px;
+    }
+
+    .logo-container img {
+        width: 140px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .checkbox-list {
+        grid-template-columns: 1fr;
+    }
+
+    .signature-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   PRINT VERSION
+========================================= */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .page {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 15px;
+        box-shadow: none;
+    }
+
+    .buttons {
+        display: none;
+    }
+
+    .form-section {
+        break-inside: avoid;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
+
+    input,
+    textarea,
+    select {
+        border: 1px solid #888;
+    }
+
+}
+
+</style>
+<body>
+
+    <div class="page">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="logo-container">
+                <img src="OIP.webp" alt="College of Shariah and Islamic Sciences Logo">
+            </div>
+
+            <div class="college-title">
+                <h1>College of Shariah and Islamic Sciences</h1>
+                <h2>Admission Form</h2>
+                <p>Academic Session 2026–2027</p>
+            </div>
+
+        </header>
+
+        <div class="form-line"></div>
+
+        <!-- Admission Form -->
+        <form id="admissionForm">
+
+            <!-- Application Information -->
+            <section class="form-section">
+                <h3>1. Application Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="applicationNo">Application No.</label>
+                        <input type="text" id="applicationNo" name="applicationNo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date of Application</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Program Applying For</label>
+
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="program" value="Shariah">
+                                Shariah
+                            </label>
+
+                            <label>
+                                <input type="radio" name="program" value="Islamic Studies">
+                                Islamic Studies
+                            </label>
+
+                            <label>
+                                <input type="radio" name="program" value="Quranic Studies">
+                                Quranic Studies
+                            </label>
+
+                            <label>
+                                <input type="radio" name="program" value="Hadith">
+                                Hadith
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Personal Information -->
+            <section class="form-section">
+
+                <h3>2. Personal Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fatherName">Father's Name *</label>
+                        <input type="text" id="fatherName" name="fatherName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth *</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cnic">CNIC / B-Form No.</label>
+                        <input type="text" id="cnic" name="cnic"
+                               placeholder="XXXXX-XXXXXXX-X">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender *</label>
+
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="gender" value="Male" required>
+                                Male
+                            </label>
+
+                            <label>
+                                <input type="radio" name="gender" value="Female">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nationality">Nationality</label>
+                        <input type="text" id="nationality" name="nationality"
+                               value="Pakistani">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="religion">Religion</label>
+                        <input type="text" id="religion" name="religion"
+                               value="Islam">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bloodGroup">Blood Group</label>
+                        <select id="bloodGroup" name="bloodGroup">
+                            <option value="">Select</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                        </select>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Contact Information -->
+            <section class="form-section">
+
+                <h3>3. Contact Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number *</label>
+                        <input type="tel" id="mobile" name="mobile"
+                               placeholder="03XX-XXXXXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="address">Permanent Address *</label>
+                        <textarea id="address" name="address"
+                                  rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" id="postalCode" name="postalCode">
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Academic Information -->
+            <section class="form-section">
+
+                <h3>4. Academic Information</h3>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Qualification</th>
+                                <th>Board / University</th>
+                                <th>Year</th>
+                                <th>Marks / Grade</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <input type="text" name="qualification1"
+                                           placeholder="Matric / O-Level">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="board1">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="year1">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="marks1">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="text" name="qualification2"
+                                           placeholder="Intermediate / A-Level">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="board2">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="year2">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="marks2">
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="text" name="qualification3"
+                                           placeholder="Other">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="board3">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="year3">
+                                </td>
+
+                                <td>
+                                    <input type="text" name="marks3">
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </section>
+
+
+            <!-- Guardian Information -->
+            <section class="form-section">
+
+                <h3>5. Parent / Guardian Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="guardianName">Guardian Name *</label>
+                        <input type="text" id="guardianName"
+                               name="guardianName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guardianRelation">Relationship</label>
+                        <input type="text" id="guardianRelation"
+                               name="guardianRelation"
+                               placeholder="Father / Guardian">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guardianPhone">Guardian Contact No.</label>
+                        <input type="tel" id="guardianPhone"
+                               name="guardianPhone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occupation">Occupation</label>
+                        <input type="text" id="occupation" name="occupation">
+                    </div>
+
+                </div>
+            </section>
+
+
+            <!-- Documents -->
+            <section class="form-section">
+
+                <h3>6. Documents Checklist</h3>
+
+                <div class="checkbox-list">
+
+                    <label>
+                        <input type="checkbox" name="documents" value="CNIC">
+                        Copy of CNIC / B-Form
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="documents" value="Photos">
+                        Passport Size Photographs
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="documents" value="Matric">
+                        Matric / O-Level Certificate
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="documents" value="Intermediate">
+                        Intermediate / A-Level Certificate
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="documents" value="Domicile">
+                        Domicile
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="documents" value="Other">
+                        Other Supporting Documents
+                    </label>
+
+                </div>
+            </section>
+
+
+            <!-- Declaration -->
+            <section class="form-section">
+
+                <h3>7. Declaration</h3>
+
+                <div class="declaration">
+
+                    <label class="declaration-check">
+                        <input type="checkbox" id="declaration" required>
+
+                        <span>
+                            I hereby declare that the information provided in this
+                            admission form is true and complete to the best of my
+                            knowledge. I agree to abide by the rules and regulations
+                            of the College of Shariah and Islamic Sciences.
+                        </span>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- Signature -->
+            <section class="signature-section">
+
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <p>Applicant's Signature</p>
+                </div>
+
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <p>Parent / Guardian Signature</p>
+                </div>
+
+                <div class="signature-box">
+                    <div class="signature-line"></div>
+                    <p>For Office Use</p>
+                </div>
+
+            </section>
+
+
+            <!-- Buttons -->
+            <div class="buttons">
+
+                <button type="submit" class="submit-btn">
+                    Submit Application
+                </button>
+
+                <button type="reset" class="reset-btn">
+                    Clear Form
+                </button>
+
+                <button type="button" class="print-btn"
+                        onclick="window.print()">
+                    Print Form
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                College of Shariah and Islamic Sciences
+            </p>
+
+            <p>
+                Admission Office | All Rights Reserved
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script>
+
+        document.getElementById("admissionForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Your admission application has been submitted successfully!"
+            );
+
+        });
+
+    </script>
+
+</body>
+</html>
